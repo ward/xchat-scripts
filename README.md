@@ -1,6 +1,7 @@
 # About
 
-These are some scripts for XChat, an IRC client. It really is just whatever
+These are some scripts for [XChat](http://xchat.org/), an IRC client.
+It really is just whatever
 comes in my mind and seems useful at the time, made to quickly work.
 Testing is minimal, but what ends up in it, should work.
 
