@@ -1,9 +1,9 @@
 # -*- coding: utf-8 -*-
 
-__module_author__ = "Ward Muylaert"
-__module_name__ = "GCalc"
-__module_version__ = "0.1"
-__module_description__ = "Google Calculator"
+__module_author__ = 'Ward Muylaert'
+__module_name__ = 'GCalc'
+__module_version__ = '0.1'
+__module_description__ = 'Google Calculator'
 
 import xchat
 from urllib import URLopener
@@ -30,7 +30,7 @@ def gcalc(word, word_eol, userdata):
     result = result.replace('&#215;', '×')
     result = result.replace('<sup>', '^')
     result = result.replace('</sup>', '')
-    xchat.prnt(result)
+    xchat.prnt("Google Calculator: %s" % result)
     return xchat.EAT_ALL
 
 xchat.hook_command('gcalc', gcalc)
