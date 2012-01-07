@@ -2,7 +2,7 @@
 
 __module_author__ = 'Ward Muylaert'
 __module_name__ = 'Unicode'
-__module_version__ = '0.2.20120101'
+__module_version__ = '0.3'
 __module_description__ = 'Replaces random smileys with Unicode variants'
 
 import xchat
