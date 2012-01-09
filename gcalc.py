@@ -9,7 +9,7 @@ import xchat
 from urllib import URLopener
 
 class MyURL(URLopener):
-    version = 'GCalc'
+    version = 'Mozilla/5.0 (X11; Linux x86_64; rv:9.0.1) Gecko/20100101 Firefox/9.0.1'
 
 def gcalc(word, word_eol, userdata):
     baseurl = 'http://www.google.com/search?q=%s'
@@ -18,12 +18,14 @@ def gcalc(word, word_eol, userdata):
     opener = MyURL()
     content = opener.open(baseurl % word_eol[1]).read()
 
-    lindex = content.find('<h2 class="r" dir="ltr" style="font-size:138%">')
+    #xchat.prnt(content)
+
+    lindex = content.find('<h2 class=r style="font-size:138%">')
     if lindex == -1:
         xchat.prnt('Nothing found. If this seems wrong, please debug.')
         return xchat.EAT_ALL
-    lindex = lindex + len('<h2 class="r" dir="ltr" style="font-size:138%">')
-    rindex = content.find('</h2>', lindex)
+    lindex = lindex + len('<h2 class=r style="font-size:138%"><b>')
+    rindex = content.find('</b></h2>', lindex)
     result = content[lindex:rindex]
     result = " ".join(result.split())
     result = result.replace('&nbsp;', ' ')
