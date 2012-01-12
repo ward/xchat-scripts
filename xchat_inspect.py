@@ -3,7 +3,7 @@
 __module_author__ = "Ward Muylaert"
 __module_name__ = "XChat Inspect"
 __module_version__ = "0.1"
-__module_description__ = "Print the interface of the xchat object"
+__module_description__ = "Print the interface of the xchat module"
 
 import xchat
 
@@ -13,4 +13,7 @@ def inspect(word, word_eol, userdata):
         print chr(2), key, chr(2), methods[key]
     return xchat.EAT_NONE
 
-xchat.hook_command("inspect", inspect)
+xchat.hook_command("inspect", xchatinspect)
+
+xchat.prnt('Loaded %s v%s by %s.'
+        % (__module_name__, __module_version__, __module_author__))
