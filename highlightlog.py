@@ -9,7 +9,7 @@ def catch_highlight(word, word_eol, userdata):
     # Input string ends up being
     # NICK line of text USERMODE
     nick = word[0]
-    text = " ".join(word[1:-1])
+    text = word[1]
     channel = xchat.get_info('channel')
     server = xchat.get_info('server')
     highlighttab = xchat.find_context(channel='@highlights')
