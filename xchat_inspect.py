@@ -13,7 +13,7 @@ def inspect(word, word_eol, userdata):
         print chr(2), key, chr(2), methods[key]
     return xchat.EAT_NONE
 
-xchat.hook_command("inspect", xchatinspect)
+xchat.hook_command("xchatinspect", inspect)
 
 xchat.prnt('Loaded %s v%s by %s.'
         % (__module_name__, __module_version__, __module_author__))
