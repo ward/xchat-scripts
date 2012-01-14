@@ -32,6 +32,7 @@ def gcalc(word, word_eol, userdata):
     result = result.replace('&#215;', '×')
     result = result.replace('<sup>', '^')
     result = result.replace('</sup>', '')
+    result = result.replace('<font size=-2> </font>', ',')
     xchat.prnt("Google Calculator: %s" % result)
     return xchat.EAT_ALL
 
