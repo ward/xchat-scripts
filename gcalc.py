@@ -2,7 +2,7 @@
 
 __module_author__ = 'Ward Muylaert'
 __module_name__ = 'GCalc'
-__module_version__ = '0.1'
+__module_version__ = '0.2'
 __module_description__ = 'Google Calculator'
 
 import xchat
