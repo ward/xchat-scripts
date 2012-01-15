@@ -9,7 +9,8 @@ def allaway(word, word_eol, userdata):
     channels = xchat.get_list('channels')
     for channel in channels:
         # Channel type 1 is a server, meaning we'll do it in every status tab
-        if channel.type == 1:
+        # Second check is to make sure we are connected
+        if channel.type == 1 and channel.context.get_info('server') != None:
             channel.context.command(word_eol[0][3:]) 
     return xchat.EAT_ALL
 
