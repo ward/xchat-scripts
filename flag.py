@@ -10,6 +10,7 @@ import xchat
 
 _country_to_flag_dict = {
         'BEL': '\k01,01****\k08,08****\k04,04****\n\k01,01****\k08,08****\k04,04****\n\k01,01****\k08,08****\k04,04****'
+        , 'CHN': '\k04,04**\\b\k08,04*\\b*\k04,04********\n\k04,04**\k08,04**\k04,04********\n\k04,04************'
         , 'FRA': '\k02,02****\k00,00****\k04,04****\n\k02,02****\k00,00****\k04,04****\n\k02,02****\k00,00****\k04,04****'
         , 'JPN': '\k00,00************\n\k00,00*****\k04,04**\k00,00*****\n\k00,00************'
         , 'LUX': '\k04,04************\n\k00,00************\n\k12,12************'
@@ -19,8 +20,8 @@ _country_to_flag_dict = {
 
 def country_to_flag(countrycode):
     try:
-        flag = _country_to_flag_dict[countrycode]
-        flag = flag.replace('\\k', chr(3))
+        flag = _country_to_flag_dict[countrycode.upper()]
+        flag = flag.replace('\\k', chr(3)).replace('\\b', chr(2))
         return flag
     except KeyError:
         raise LookupError
