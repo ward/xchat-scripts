@@ -5,6 +5,9 @@ __module_description__ = ''
 
 import xchat
 
+# Country KEY is http://en.wikipedia.org/wiki/ISO_3166-1_alpha-3
+# Flag is 3 lines high, 12 '*' wide
+
 _country_to_flag_dict = {
         'BEL': '\k01,01****\k08,08****\k04,04****\n\k01,01****\k08,08****\k04,04****\n\k01,01****\k08,08****\k04,04****'
         , 'FRA': '\k02,02****\k00,00****\k04,04****\n\k02,02****\k00,00****\k04,04****\n\k02,02****\k00,00****\k04,04****'
@@ -23,15 +26,18 @@ def country_to_flag(countrycode):
         raise LookupError
 
 def flag(word, word_eol, userdata):
+    channel = xchat.get_info('channel')
+    if channel[0] == '#':
+
     try:
         flag = country_to_flag(word[1]).split('\n')
         for line in flag:
-            xchat.prnt(line)
+            xchat.command("say " + line)
     except LookupError:
         xchat.prnt("ERROR: No such country code")
     return xchat.EAT_ALL
 
-xchat.hook_command("flag", flag)
+xchat.hook_command("flag", flag, help="/FLAG COUNTRYCODE")
 
 xchat.prnt('Loaded %s v%s by %s.'
         % (__module_name__, __module_version__, __module_author__))
