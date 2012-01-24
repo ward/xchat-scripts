@@ -27,7 +27,7 @@ def country_to_flag(countrycode):
 
 def flag(word, word_eol, userdata):
     channel = xchat.get_info('channel')
-    if channel[0] == '#':
+    #if channel[0] == '#':
 
     try:
         flag = country_to_flag(word[1]).split('\n')
