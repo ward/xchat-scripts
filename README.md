@@ -21,5 +21,5 @@ please try to use Python. The XChat plugin uses Python 2 still, so keep
 that in mind as well. For the XChat documentation, I refer you to
 
 * [XChat Python](http://xchat.org/docs/xchatpython.html)
-* [XChat C++](http://xchat.org/docs/plugin20.html) (handy for some
+* [XChat C](http://xchat.org/docs/plugin20.html) (handy for some
   things that are undocumented in the Python docs)
