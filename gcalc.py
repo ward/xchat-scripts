@@ -13,12 +13,20 @@ class MyURL(URLopener):
 
 def gcalc(word, word_eol, userdata):
     baseurl = 'http://www.google.com/search?q=%s'
+    query = word_eol[1]
+    debug = False
+    if word[1] == '--debug':
+        debug = True
+        query = word_eol[2]
 
     # TODO: Fix freeze while loading.
     opener = MyURL()
-    content = opener.open(baseurl % word_eol[1]).read()
+    content = opener.open(baseurl % query).read()
 
-    #xchat.prnt(content)
+    if debug:
+        for i in range(len(content)/1000):
+            print content[i*1000:(i+1)*1000]
+        return xchat.EAT_ALL
 
     lindex = content.find('<h2 class=r style="font-size:138%">')
     if lindex == -1:
