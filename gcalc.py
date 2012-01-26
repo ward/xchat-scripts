@@ -7,6 +7,7 @@ __module_description__ = 'Google Calculator'
 
 import xchat
 from urllib import URLopener
+import re
 
 class MyURL(URLopener):
     version = 'Mozilla/5.0 (X11; Linux x86_64; rv:9.0.1) Gecko/20100101 Firefox/9.0.1'
@@ -38,6 +39,9 @@ def gcalc(word, word_eol, userdata):
     result = " ".join(result.split())
     result = result.replace('&nbsp;', ' ')
     result = result.replace('&#215;', '×')
+    result = re.sub(r'<sup>(\d+)<\/sup>&#8260;<sub>(\d+)</sub>',
+            r' \1⁄\2',
+            result)
     result = result.replace('<sup>', '^')
     result = result.replace('</sup>', '')
     result = result.replace('<font size=-2> </font>', ',')
