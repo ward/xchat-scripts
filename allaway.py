@@ -1,3 +1,9 @@
+###############################################################################
+# I was foolish and didn't realize XChat provides an /allserv command.        #
+# It is more straightforward to just make a user command that redirects       #
+# /allaway to /allserv away                                                   #
+###############################################################################
+
 __module_author__ = 'Ward Muylaert'
 __module_name__ = 'AllAway'
 __module_version__ = '0.1'
