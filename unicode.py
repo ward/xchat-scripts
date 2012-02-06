@@ -29,6 +29,8 @@ def intercept_print(word, word_eol, userdata):
         .replace(':commy:', '☭') \
         .replace(':king:', '♔') \
         .replace(':zzz:', '(￣。￣)～ｚｚｚ') \
+        .replace(':hugme:', '(ノ゜ω゜)ノ') \
+        .replace(':fliptable:', '(╯°□°）╯︵ ┻━┻') \
         .replace('\\infty', '∞') \
         .replace('\\in', '∈') \
         .replace('\\forall', '∀') \
