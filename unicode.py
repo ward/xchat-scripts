@@ -37,6 +37,7 @@ def intercept_print(word, word_eol, userdata):
         .replace('\\nin', '∉') \
         .replace('\\sqrt', '√') \
         .replace('\\pm', '±') \
+        .replace('+-', '±') \
         .replace('\\neq', '≠')
     xchat.command(' '.join(['msg', xchat.get_info('channel'), line]))
     return xchat.EAT_ALL
