@@ -30,7 +30,7 @@ def country_to_flag(countrycode):
 
 def flag(word, word_eol, userdata):
     channel = xchat.get_info('channel')
-    modes = xchat.get_info('modes')
+    modes = xchat.get_info('modes').partition(' ')[0]
     if channel[0] == '#' and ('S' in modes or 'c' in modes):
         xchat.prnt("ERROR: Detected channel mode S or c")
         return xchat.EAT_ALL
