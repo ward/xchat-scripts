@@ -1,5 +1,7 @@
 # -*- coding: utf-8 -*-
 
+# CURRENTLY BROKEN (Google keeps changing :( )
+
 __module_author__ = 'Ward Muylaert'
 __module_name__ = 'GCalc'
 __module_version__ = '0.2'
