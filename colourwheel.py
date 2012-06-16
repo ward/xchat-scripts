@@ -11,6 +11,7 @@ def colourwheel(word, word_eol, userdata):
             '\k01,1111\k01,1212\k01,1313\k01,1414\k01,1515'
     colours = colours.replace('\\k', chr(3))
     xchat.prnt(colours)
+    return xchat.EAT_ALL
 
 xchat.hook_command('colourwheel', colourwheel)
 
