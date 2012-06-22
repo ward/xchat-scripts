@@ -40,17 +40,17 @@ def flag(word, word_eol, userdata):
     if isinstance(modes, basestring):
         modes = modes.partition(' ')[0]
     if channel[0] == '#' and ('S' in modes or 'c' in modes):
-        xchat.prnt("ERROR: Detected channel mode S or c")
+        xchat.prnt('ERROR: Detected channel mode S or c')
         return xchat.EAT_ALL
     try:
         flag = country_to_flag(word[1]).split('\n')
         for line in flag:
-            xchat.command("say " + line)
+            xchat.command('say ' + line)
     except LookupError:
-        xchat.prnt("ERROR: No such country code")
+        xchat.prnt('ERROR: No such country code')
     return xchat.EAT_ALL
 
-xchat.hook_command("flag", flag, help="/FLAG COUNTRYCODE")
+xchat.hook_command('flag', flag, help='/FLAG COUNTRYCODE')
 
 xchat.prnt('Loaded %s v%s by %s.'
         % (__module_name__, __module_version__, __module_author__))
