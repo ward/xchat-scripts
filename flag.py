@@ -8,6 +8,9 @@ import xchat
 # Country KEY is http://en.wikipedia.org/wiki/ISO_3166-1_alpha-3
 # Flag is 3 lines high, 12 '*' wide
 
+# Colours are following mIRC's default, the list can be found at
+# http://b.wardje.eu/2012/01/mirc-default-colours.html
+
 _country_to_flag_dict = {
         'BEL': '\k01,01****\k08,08****\k04,04****\n\k01,01****\k08,08****\k04,04****\n\k01,01****\k08,08****\k04,04****'
         , 'CHN': '\k04,04**\\b\k08,04*\\b*\k04,04********\n\k04,04**\k08,04**\k04,04********\n\k04,04************'
